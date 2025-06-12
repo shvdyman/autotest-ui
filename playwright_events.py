@@ -8,7 +8,7 @@ def log_request(request: Request):
 
 # Логирование ответов
 def log_response(response: Response):
-    print(f"Response: {response.url}")
+    print(f"Response: {response.url}, {response.status}")
 
 
 with sync_playwright() as playwright:
