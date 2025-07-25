@@ -1,5 +1,8 @@
 from playwright.sync_api import sync_playwright, expect
+import pytest
 
+@pytest.mark.regression
+@pytest.mark.registration
 def test_successful_registration():
     with sync_playwright() as playwright:
         # Launch browser and create context
@@ -29,7 +32,7 @@ def test_successful_registration():
         expect(page).to_have_url('https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/dashboard')
         
         # Save state
-        context.storage_state(path='browser-state.json')
+        context.storage_state(path='browser_state.json')
         
         # Close context
         context.close()
