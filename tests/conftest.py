@@ -7,6 +7,3 @@ def chromium_page() -> Page:
     browser = playwright.chromium.launch(headless=False)
     page = browser.new_page()
     yield page
-    page.close()
-    browser.close()
-    playwright.stop()
