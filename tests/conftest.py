@@ -1,9 +1,8 @@
 import pytest
-from playwright.sync_api import sync_playwright, Page
+from playwright.sync_api import Page, Playwright
 
-@pytest.fixture(scope="function")
-def chromium_page() -> Page:
-    playwright = sync_playwright().start()
+@pytest.fixture
+def page(playwright: Playwright) -> Page:
     browser = playwright.chromium.launch(headless=False)
     page = browser.new_page()
     yield page
