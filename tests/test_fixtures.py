@@ -24,6 +24,11 @@ def user():
 def browser():
     print("[FUNCTION] Открываем браузер на каждый автотест")
 
+# Фикстура для открытия которая будет открывать страницу Dashboard сразу, используя сохраненное состояние
+@pytest.fixture
+def dashboard_page_with_state(chromium_page_with_state: Page) -> DashboardPage:
+    return DashboardPage(page=chromium_page_with_state)
+
 
 class TestUserFlow:
     def test_user_can_login(self, settings, user, browser):
