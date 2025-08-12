@@ -9,9 +9,9 @@ from pages.dashboard_page import DashboardPage
 def test_successful_registration(dashboard_page: DashboardPage, registration_page: RegistrationPage):
     registration_page.visit("https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/auth/registration")
     registration_page.fill_registration_form(
-        email="user.name@gmail.com",
-        username="username",
-        password="password"
+        email="User.name@gmail.com",
+        username="Username",
+        password="Password"
     )
     registration_page.click_registration_button()
 

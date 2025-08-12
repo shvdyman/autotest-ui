@@ -6,7 +6,7 @@
             "localStorage": [
                 {
                     "name": "persist:users",
-                    "value": "{\"user\":\"{\\\"id\\\":\\\"b4825c38-f1ae-489c-aa70-a2c394192e29\\\",\\\"email\\\":\\\"user@gmail.com\\\",\\\"username\\\":\\\"username\\\",\\\"password\\\":\\\"password\\\"}\",\"users\":\"[{\\\"id\\\":\\\"b4825c38-f1ae-489c-aa70-a2c394192e29\\\",\\\"email\\\":\\\"user@gmail.com\\\",\\\"username\\\":\\\"username\\\",\\\"password\\\":\\\"password\\\"}]\",\"_persist\":\"{\\\"version\\\":-1,\\\"rehydrated\\\":true}\"}"
+                    "value": "{\"user\":\"{\\\"id\\\":\\\"acb895b7-fc63-4e4a-b5e0-0b32ecad29a0\\\",\\\"email\\\":\\\"User.name@gmail.com\\\",\\\"username\\\":\\\"Username\\\",\\\"password\\\":\\\"Password\\\"}\",\"users\":\"[{\\\"id\\\":\\\"acb895b7-fc63-4e4a-b5e0-0b32ecad29a0\\\",\\\"email\\\":\\\"User.name@gmail.com\\\",\\\"username\\\":\\\"Username\\\",\\\"password\\\":\\\"Password\\\"}]\",\"_persist\":\"{\\\"version\\\":-1,\\\"rehydrated\\\":true}\"}"
                 },
                 {
                     "name": "persist:courses",
