@@ -7,7 +7,7 @@ from pages.login_page import LoginPage # Импортируем LoginPage
 @pytest.mark.parametrize(
     "email, password",
     [
-        ("user.name@gmail.com", "password"),
+        ("User.name@gmail.com", "Password"),
         ("user.name@gmail.com", "  "),
         ("  ", "password")
     ]
