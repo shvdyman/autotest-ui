@@ -1,3 +1,4 @@
+from playwright.sync_api import Page
 import pytest
 
 
@@ -23,11 +24,6 @@ def user():
 @pytest.fixture(scope='function')
 def browser():
     print("[FUNCTION] Открываем браузер на каждый автотест")
-
-# Фикстура для открытия которая будет открывать страницу Dashboard сразу, используя сохраненное состояние
-@pytest.fixture
-def dashboard_page_with_state(chromium_page_with_state: Page) -> DashboardPage:
-    return DashboardPage(page=chromium_page_with_state)
 
 
 class TestUserFlow:
