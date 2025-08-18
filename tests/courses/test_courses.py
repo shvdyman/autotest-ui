@@ -2,7 +2,7 @@ import pytest
 
 from pages.courses.courses_list_page import CoursesListPage
 from pages.courses.create_course_page import CreateCoursePage
-
+from components.dashboard.dashboard_toolbar_view_component import DashboardToolbarViewComponent
 
 @pytest.mark.courses
 @pytest.mark.regression
@@ -10,10 +10,9 @@ class TestCourses:
     def test_empty_courses_list(self, courses_list_page: CoursesListPage):
         courses_list_page.visit("https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/courses")
 
-        courses_list_page.navbar.check_visible("username")
+        courses_list_page.navbar.check_visible("Username")
         courses_list_page.sidebar.check_visible()
-
-        courses_list_page.toolbar_view.check_visible()
+        courses_list_page.dashboard.toolbar_view.check_visible()
         courses_list_page.check_visible_empty_view()
 
     def test_create_course(self, courses_list_page: CoursesListPage, create_course_page: CreateCoursePage):
@@ -27,7 +26,7 @@ class TestCourses:
         create_course_page.create_course_exercises_toolbar_view.check_visible()
         create_course_page.check_visible_exercises_empty_view()
 
-        create_course_page.image_upload_widget.upload_preview_image("./testdata/files/image.png")
+        create_course_page.image_upload_widget.upload_preview_image("./testdata/files/image.jpg")
         create_course_page.image_upload_widget.check_visible(is_image_uploaded=True)
         create_course_page.create_course_form.fill(
             title="Playwright",
@@ -45,7 +44,7 @@ class TestCourses:
 
     def test_edit_course(self, courses_list_page: CoursesListPage, create_course_page: CreateCoursePage):
         create_course_page.visit("https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/courses/create")
-        create_course_page.image_upload_widget.upload_preview_image("./testdata/files/image.png")
+        create_course_page.image_upload_widget.upload_preview_image("./testdata/files/image.jpg")
         create_course_page.image_upload_widget.check_visible(is_image_uploaded=True)
         create_course_page.create_course_form.fill(
             title="Playwright",

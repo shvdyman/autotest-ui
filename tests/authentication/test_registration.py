@@ -10,9 +10,9 @@ class TestRegistration:
     def test_successful_registration(self, dashboard_page: DashboardPage, registration_page: RegistrationPage):
         registration_page.visit("https://nikita-filonov.github.io/qa-automation-engineer-ui-course/#/auth/registration")
         registration_page.registration_form.fill(
-            email="user.name@gmail.com",
-            username="username",
-            password="password"
+            email="User.name@gmail.com",
+            username="Username",
+            password="Password"
         )
         registration_page.click_registration_button()
 
