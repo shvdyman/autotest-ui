@@ -2,7 +2,7 @@ import pytest
 
 from pages.courses.courses_list_page import CoursesListPage
 from pages.courses.create_course_page import CreateCoursePage
-from components.dashboard.dashboard_toolbar_view_component import DashboardToolbarViewComponent
+
 
 @pytest.mark.courses
 @pytest.mark.regression
@@ -12,7 +12,7 @@ class TestCourses:
 
         courses_list_page.navbar.check_visible("Username")
         courses_list_page.sidebar.check_visible()
-        courses_list_page.dashboard.toolbar_view.check_visible()
+        courses_list_page.toolbar_view.check_visible()
         courses_list_page.check_visible_empty_view()
 
     def test_create_course(self, courses_list_page: CoursesListPage, create_course_page: CreateCoursePage):
