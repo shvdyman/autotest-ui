@@ -8,6 +8,7 @@ from elements.icon import Icon
 from elements.image import Image
 from elements.text import Text
 
+
 class ImageUploadWidgetComponent(BaseComponent):
     def __init__(self, page: Page, identifier: str):
         super().__init__(page)

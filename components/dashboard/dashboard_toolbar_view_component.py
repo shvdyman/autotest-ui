@@ -1,6 +1,8 @@
 from playwright.sync_api import Page
+
 from components.base_component import BaseComponent
 from elements.text import Text
+
 
 class DashboardToolbarViewComponent(BaseComponent):
     def __init__(self, page: Page):

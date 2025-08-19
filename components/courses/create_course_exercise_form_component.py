@@ -28,11 +28,11 @@ class CreateCourseExerciseFormComponent(BaseComponent):
         self.title_input.check_have_value(title, index=index)
 
         self.description_input.check_visible(index=index)
-        self.description_input.check_have_value(description, index=index)
+        self.description_input.check_have_text(description, index=index)
 
     def fill(self, index: int, title: str, description: str):
         self.title_input.fill(title, index=index)
         self.title_input.check_have_value(title, index=index)
 
         self.description_input.fill(description, index=index)
-        self.description_input.check_have_value(description, index=index)
+        self.description_input.check_have_text(description, index=index)

@@ -12,6 +12,7 @@ class TestCourses:
 
         courses_list_page.navbar.check_visible("Username")
         courses_list_page.sidebar.check_visible()
+
         courses_list_page.toolbar_view.check_visible()
         courses_list_page.check_visible_empty_view()
 
