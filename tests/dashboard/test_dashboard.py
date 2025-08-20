@@ -24,4 +24,4 @@ class TestDashboard:
         dashboard_page_with_state.check_visible_scores_chart()
         dashboard_page_with_state.check_visible_courses_chart()
         dashboard_page_with_state.check_visible_students_chart()
-        dashboard_page_with_state.check_visible_activities_chart()
+        dashboard_page_with_state.check_visible_activities_chart(sadsad)
