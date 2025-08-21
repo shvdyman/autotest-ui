@@ -1,5 +1,6 @@
 import allure
 from playwright.sync_api import Playwright, Page
+from allure_commons.types import AttachmentType
 
 def initialize_playwright_page(
         playwright: Playwright, 
