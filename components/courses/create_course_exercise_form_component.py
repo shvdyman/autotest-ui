@@ -1,40 +1,51 @@
+import allure
 from playwright.sync_api import Page
 
 from components.base_component import BaseComponent
-from elements.button import Button
 from elements.input import Input
-from elements.text import Text
-import allure
+from elements.textarea import Textarea
 
-class CreateCourseExerciseFormComponent(BaseComponent):
+
+class CreateCourseFormComponent(BaseComponent):
     def __init__(self, page: Page):
         super().__init__(page)
 
-        self.delete_exercise_button = Button(
-            page, 'create-course-exercise-{index}-box-toolbar-delete-exercise-button', 'Delete exercise'
-        )
-        self.subtitle = Text(page, 'create-course-exercise-{index}-box-toolbar-subtitle-text', 'Exercise subtitle')
-        self.title_input = Input(page, 'create-course-exercise-form-title-{index}-input', 'Title')
-        self.description_input = Input(page, 'create-course-exercise-form-description-{index}-input', 'Description')
+        self.title_input = Input(page, 'create-course-form-title-input', 'Title')
+        self.estimated_time_input = Input(page, 'create-course-form-estimated-time-input', 'Estimated time')
+        self.description_textarea = Textarea(page, 'create-course-form-description-input', 'Description')
+        self.max_score_input = Input(page, 'create-course-form-max-score-input', 'Max score')
+        self.min_score_input = Input(page, 'create-course-form-min-score-input', 'Min score')
 
-    def click_delete_exercise_button(self, index: int):
-        self.delete_exercise_button.click(index=index)
+    @allure.step("Check visible create course from")
+    def check_visible(self, title: str, estimated_time: str, description: str, max_score: str, min_score: str):
+        self.title_input.check_visible()
+        self.title_input.check_have_value(title)
 
-    @allure.step('Check visible create course exercise form at index "{undex}"')
-    def check_visible(self, index: int, title: str, description: str):
-        self.subtitle.check_visible(index=index)
-        self.subtitle.check_have_text(f"#{index + 1} Exercise", index=index)
+        self.estimated_time_input.check_visible()
+        self.estimated_time_input.check_have_value(estimated_time)
 
-        self.title_input.check_visible(index=index)
-        self.title_input.check_have_value(title, index=index)
+        self.description_textarea.check_visible()
+        self.description_textarea.check_have_value(description)
 
-        self.description_input.check_visible(index=index)
-        self.description_input.check_have_text(description, index=index)
+        self.max_score_input.check_visible()
+        self.max_score_input.check_have_value(max_score)
 
-    @allure.step('Fill create course exercise form at index "{undex}"')
-    def fill(self, index: int, title: str, description: str):
-        self.title_input.fill(title, index=index)
-        self.title_input.check_have_value(title, index=index)
+        self.min_score_input.check_visible()
+        self.min_score_input.check_have_value(min_score)
 
-        self.description_input.fill(description, index=index)
-        self.description_input.check_have_text(description, index=index)
+    @allure.step("Fill create course from")
+    def fill(self, title: str, estimated_time: str, description: str, max_score: str, min_score: str):
+        self.title_input.fill(title)
+        self.title_input.check_have_value(title)
+
+        self.estimated_time_input.fill(estimated_time)
+        self.estimated_time_input.check_have_value(estimated_time)
+
+        self.description_textarea.fill(description)
+        self.description_textarea.check_have_value(description)
+
+        self.max_score_input.fill(max_score)
+        self.max_score_input.check_have_value(max_score)
+
+        self.min_score_input.fill(min_score)
+        self.min_score_input.check_have_value(min_score)
