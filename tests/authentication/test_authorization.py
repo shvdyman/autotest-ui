@@ -11,10 +11,13 @@ from allure_commons.types import Severity
 
 @pytest.mark.regression
 @pytest.mark.authorization
-@allure.tag(AllureTag.REGRESSION, AllureTag.AUTHORIZATION, )
+@allure.tag(AllureTag.REGRESSION, AllureTag.AUTHORIZATION,)
 @allure.epic(AllureEpic.LMS)
 @allure.feature(AllureFeature.AUTHENTICATION)
 @allure.story(AllureStory.AUTHORIZATION)
+@allure.parent_suite(AllureEpic.LMS)
+@allure.suite(AllureFeature.AUTHENTICATION)
+@allure.sub_suite(AllureStory.AUTHORIZATION)
 class TestAuthorization:
     @allure.tag(AllureTag.USER_LOGIN)
     @allure.title('User login with correct email and password')
