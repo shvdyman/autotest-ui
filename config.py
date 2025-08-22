@@ -1,7 +1,7 @@
 from enum import Enum
 from typing import Self
 
-from pydantic import EmailStr, FilePath, HttpUrl, DirectoryPath, BaseModel
+from pydantic import EmailStr, FilePath, HttpUrl, DirectoryPath
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -11,13 +11,17 @@ class Browser(str, Enum):
     CHROMIUM = "chromium"
 
 
-class TestUser(BaseModel):
+class TestUser(BaseSettings):
+    model_config = SettingsConfigDict(env_prefix="TEST_USER")
+
     email: EmailStr
     username: str
     password: str
 
 
-class TestData(BaseModel):
+class TestData(BaseSettings):
+    model_config = SettingsConfigDict(env_prefix="TEST_DATA")
+
     image_jpg_file: FilePath
 
 
@@ -37,6 +41,9 @@ class Settings(BaseSettings):
     tracing_dir: DirectoryPath
     browser_state_file: FilePath
 
+    def get_base_url(self) -> str:
+        return f"{self.app_url}/"
+
     @classmethod
     def initialize(cls) -> Self:
         videos_dir = DirectoryPath("./videos")
@@ -52,5 +59,6 @@ class Settings(BaseSettings):
             tracing_dir=tracing_dir,
             browser_state_file=browser_state_file
         )
-# Инициализируем настройки
+
+
 settings = Settings.initialize()
