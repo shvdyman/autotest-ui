@@ -1,6 +1,6 @@
 import allure
 from playwright.sync_api import Playwright, Page
-from mocks import mock_static_resources
+from tools.playwright.mocks import mock_static_resources
 from config import settings, Browser  # Импортируем enum Browser
 
 
