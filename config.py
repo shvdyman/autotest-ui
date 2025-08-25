@@ -22,7 +22,7 @@ class TestUser(BaseSettings):
 class TestData(BaseSettings):
     model_config = SettingsConfigDict(env_prefix="TEST_DATA")
 
-    image_png_file: FilePath
+    image_jpg_file: FilePath
 
 
 class Settings(BaseSettings):
