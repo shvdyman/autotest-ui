@@ -8,7 +8,7 @@ from ui_coverage_tool import UICoverageTracker, SelectorType, ActionType
 
 # Создаём экземпляр трекера. 
 # Значение `app` — это ключ приложения (должно совпадать с ключом в конфиге UI_COVERAGE_APPS)
-tracker = UICoverageTracker(app="my-ui-app")
+tracker = UICoverageTracker(app="ui-course")
 
 with sync_playwright() as playwright:
     browser = playwright.chromium.launch()
