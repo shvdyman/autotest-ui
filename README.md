@@ -17,7 +17,6 @@ The goal of this project is to automate the testing of the UI Course application
 
 ### Clone the Repository
 
-```bash
 git clone https://github.com/shvdyman/autotest-ui.git
 cd autotest-ui
 Create a Virtual Environment
