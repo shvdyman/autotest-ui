@@ -32,24 +32,24 @@ source venv/bin/activate
 python -m venv venv
 venv\Scripts\activate
 ```
-Install Dependencies
+### Install Dependencies
 Once the virtual environment is activated, install the project dependencies listed in requirements.txt:
 ```bash
 pip install -r requirements.txt
 ```
-Additional Playwright Setup (if needed)
+### Additional Playwright Setup (if needed)
 If you're running Playwright for the first time, you might need to install the required browsers:
 ```bash
 playwright install
 ```
-Running the Tests with Allure Report Generation
+### Running the Tests with Allure Report Generation
 To run the tests and generate an Allure report, use the following command:
 ```bash
 pytest -m "regression" --alluredir=./allure-results
 ```
 This will execute all tests in the project and display the results in the terminal.
 
-Viewing the Allure Report
+### Viewing the Allure Report
 After the tests have been executed, you can generate and view the Allure report with:
 ```bash
 allure serve allure-results
